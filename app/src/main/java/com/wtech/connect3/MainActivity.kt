@@ -142,6 +142,26 @@ class MainActivity : AppCompatActivity() {
 
                     }
 
+                    else->{
+                       var gameOver=true
+                        for (state in gameState){
+                            if (state==2){
+                                gameOver=false
+                            }
+                        }
+                        if (gameOver){
+                            binding.winnerText.text = "Game Draw! "
+                            binding.linear.animate().y(-1000f)
+
+                            binding.linear.animate().alphaBy(1f).duration=300
+                            binding.linear.visibility = View.VISIBLE
+                            binding.linear.animate()
+                                .rotation(360f)
+                                .translationYBy(100f)
+                                .duration=300
+                        }
+                    }
+
                 }
 
 
